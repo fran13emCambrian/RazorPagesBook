@@ -1,0 +1,74 @@
+﻿@page
+@model RazorPagesBook.Pages.Books.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Enter New Book you Red For Rating</h1>
+
+<h4>Book Information:</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Book.Title" class="control-label"></label>
+                <input asp-for="Book.Title" class="form-control" />
+                <span asp-validation-for="Book.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Category" class="control-label"></label>
+                <input asp-for="Book.Category" class="form-control" />
+                <span asp-validation-for="Book.Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Author" class="control-label"></label>
+                <input asp-for="Book.Author" class="form-control" />
+                <span asp-validation-for="Book.Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Enter Book Edition</label>
+                <input asp-for="Book.Edition" class="form-control" />
+                <span asp-validation-for="Book.Edition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Publisher" class="control-label"></label>
+                <input asp-for="Book.Publisher" class="form-control" />
+                <span asp-validation-for="Book.Publisher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Enter Book Description or Brief Synopsis</label>
+                <input asp-for="Book.Description" class="form-control" />
+                <span asp-validation-for="Book.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Enter Book Amount of pages</label>
+                <input asp-for="Book.Size" class="form-control" />
+                <span asp-validation-for="Book.Size" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Enter Yor Rating for the book 1 - 5</label>
+                <input asp-for="Book.Rating" class="form-control" />
+                <span asp-validation-for="Book.Size" class="text-danger"></span>
+            </div>
+
+
+
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+    </form>
+</div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
